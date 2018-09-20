@@ -1,0 +1,11 @@
+C:\Users\steve\OneDrive\Bureaublad\DEV-2.1-Herkansing\Oefeningen Les\Les1\bin\Debug\netcoreapp2.0\Les1.deps.json
+C:\Users\steve\OneDrive\Bureaublad\DEV-2.1-Herkansing\Oefeningen Les\Les1\bin\Debug\netcoreapp2.0\Les1.runtimeconfig.json
+C:\Users\steve\OneDrive\Bureaublad\DEV-2.1-Herkansing\Oefeningen Les\Les1\bin\Debug\netcoreapp2.0\Les1.runtimeconfig.dev.json
+C:\Users\steve\OneDrive\Bureaublad\DEV-2.1-Herkansing\Oefeningen Les\Les1\bin\Debug\netcoreapp2.0\Les1.dll
+C:\Users\steve\OneDrive\Bureaublad\DEV-2.1-Herkansing\Oefeningen Les\Les1\bin\Debug\netcoreapp2.0\Les1.pdb
+C:\Users\steve\OneDrive\Bureaublad\DEV-2.1-Herkansing\Oefeningen Les\Les1\obj\Debug\netcoreapp2.0\Les1.csprojResolveAssemblyReference.cache
+C:\Users\steve\OneDrive\Bureaublad\DEV-2.1-Herkansing\Oefeningen Les\Les1\obj\Debug\netcoreapp2.0\Les1.csproj.CoreCompileInputs.cache
+C:\Users\steve\OneDrive\Bureaublad\DEV-2.1-Herkansing\Oefeningen Les\Les1\obj\Debug\netcoreapp2.0\Les1.AssemblyInfoInputs.cache
+C:\Users\steve\OneDrive\Bureaublad\DEV-2.1-Herkansing\Oefeningen Les\Les1\obj\Debug\netcoreapp2.0\Les1.AssemblyInfo.cs
+C:\Users\steve\OneDrive\Bureaublad\DEV-2.1-Herkansing\Oefeningen Les\Les1\obj\Debug\netcoreapp2.0\Les1.dll
+C:\Users\steve\OneDrive\Bureaublad\DEV-2.1-Herkansing\Oefeningen Les\Les1\obj\Debug\netcoreapp2.0\Les1.pdb

@@ -1418,10 +1418,10 @@
       "path": "microsoft.netcore.platforms/2.0.0",
       "files": [
         "LICENSE.TXT",
+        "Microsoft.NETCore.Platforms.2.0.0.nupkg.sha512",
+        "Microsoft.NETCore.Platforms.nuspec",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.2.0.0.nupkg.sha512",
-        "microsoft.netcore.platforms.nuspec",
         "runtime.json",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -3209,24 +3209,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Gebruiker\\.nuget\\packages\\": {},
+    "C:\\Users\\steve\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gebruiker\\Desktop\\Herkansing DEV 2.1\\Oefeningen Les\\Les1\\Les1.csproj",
+      "projectUniqueName": "C:\\Users\\steve\\OneDrive\\Bureaublad\\DEV-2.1-Herkansing\\Oefeningen Les\\Les1\\Les1.csproj",
       "projectName": "Les1",
-      "projectPath": "C:\\Users\\Gebruiker\\Desktop\\Herkansing DEV 2.1\\Oefeningen Les\\Les1\\Les1.csproj",
-      "packagesPath": "C:\\Users\\Gebruiker\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gebruiker\\Desktop\\Herkansing DEV 2.1\\Oefeningen Les\\Les1\\obj\\",
+      "projectPath": "C:\\Users\\steve\\OneDrive\\Bureaublad\\DEV-2.1-Herkansing\\Oefeningen Les\\Les1\\Les1.csproj",
+      "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\steve\\OneDrive\\Bureaublad\\DEV-2.1-Herkansing\\Oefeningen Les\\Les1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Gebruiker\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\steve\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
