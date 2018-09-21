@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Model;
 using System;
+using System.Collections.Generic;
 
 namespace Les1
 {
@@ -21,6 +22,32 @@ namespace Les1
                 db.Movies.Add(m);
                 db.SaveChanges();*/
 
+                //FEEDBACK VAN LES
+                foreach (var movie in db.Movies) {
+                    Console.WriteLine(movie.Title);
+                    foreach (var ma in db.MovieActor) {
+                        if (ma.MovieId == movie.Id) {
+                            foreach (var actor in db.Actors) {
+                                if (actor.Id == ma.ActorId) {
+                                    Console.WriteLine(" - " + actor.Name);
+                                }
+                            }
+                        }
+                    }
+                }
+                var query = from m in db.Movies
+                            from ma in db.MovieActor
+                            from a in db.Actors
+                            where m.Id == ma.MovieId && a.Id == ma.ActorId
+                            select new {Actor = a, Movie = m};
+                            //where m.Title.EndsWith("2")
+                            //select m;
+                foreach (var item in query){
+
+                    Console.WriteLine("Movies: " + item.Movie.Title + " - Actor: " + item.Actor.Name);
+                }
+
+
                 //Find and see the actors for each movie in DB
                 foreach (var movie in db.Movies) {
                     Console.WriteLine("Found movie with title: " + movie.Title);
@@ -32,6 +59,7 @@ namespace Les1
                     //}
                     var query = db.Actors.Where(a => a.Movies.Any(m => m.MovieId == MovieID)).ToList();
                     var query1 = from actor in db.Actors where actor.Movies.Any(m => m.MovieId == MovieID) select actor;
+                    return result.Where(a => a.Movies.Any(m => m.Movie == MovieId));
                     Console.WriteLine(query1);
 
 

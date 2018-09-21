@@ -7,6 +7,7 @@ namespace Model {
         public DbSet<Movie> Movies { get; set; }
         //this is actual entity object linked to the actors in our DB
         public DbSet<Actor> Actors { get; set; }
+        public DbSet<MovieActor> MovieActor { get; set; }
 
         //this method is run automatically by EF the first time we run the application
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
