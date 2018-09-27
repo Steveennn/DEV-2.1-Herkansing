@@ -41,10 +41,19 @@ namespace Les1
                     new MovieActor{Actor = new Actor {Name = "Chris Evans"}}
                     }
                 };
+                Movie m4 = new Movie {
+                    Title = "No country for old men",
+                    Actors = new System.Collections.Generic.List<MovieActor> {
+                        new MovieActor{Actor = new Actor {Name = "Tommy Lee"}},
+                        new MovieActor{Actor = new Actor {Name = "Xavier Berdem"}}
+                    }
+                };
+                
                 db.Movies.Add(m);
                 db.Movies.Add(m1);
                 db.Movies.Add(m2);
                 db.Movies.Add(m3);
+                db.Movies.Add(m4);
                 db.SaveChanges();*/
 
                 //FEEDBACK VAN LES
@@ -80,11 +89,8 @@ namespace Les1
                             //where m.Title.EndsWith("2")
                             //select m;
                 foreach (var item in query){
-
                     Console.WriteLine("Movies: " + item.Movie.Title + " - Actor: " + item.Actor.Name);
                 }
-
-
                 //Editing movie title name of the 1st movie in the DB
                 Movie foundMovie = db.Movies.Find(1);
                 Console.WriteLine("Found movie with title: " + foundMovie.Title);
