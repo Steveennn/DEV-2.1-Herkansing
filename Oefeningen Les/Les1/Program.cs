@@ -13,13 +13,38 @@ namespace Les1
 
                 /*//Adding a movie + actors to DB
                 Movie m = new Movie {
-                    Title = "No country for old men",
+                    Title = "The Lion King",
                     Actors = new System.Collections.Generic.List<MovieActor> {
-                    new MovieActor{Actor = new Actor {Name = "Tommy Lee"}},
-                    new MovieActor{Actor = new Actor {Name = "Xavier Berdem"}}
+                    new MovieActor{Actor = new Actor {Name = "Timon"}},
+                    new MovieActor{Actor = new Actor {Name = "Pumba"}},
+                    new MovieActor{Actor = new Actor {Name = "Simba"}}
+                    }
+                };
+                Movie m1 = new Movie {
+                    Title = "Marvel's Avengers",
+                    Actors = new System.Collections.Generic.List<MovieActor> {
+                    new MovieActor{Actor = new Actor {Name = "Robert Downey Jr"}},
+                    new MovieActor{Actor = new Actor {Name = "Chris Hemsworth"}},
+                    new MovieActor{Actor = new Actor {Name = "Chris Evans"}}
+                    }
+                };
+                Movie m2 = new Movie {
+                    Title = "Thor",
+                    Actors = new System.Collections.Generic.List<MovieActor> {
+                    new MovieActor{Actor = new Actor {Name = "Chris Hemsworth"}}
+                    }
+                };
+                Movie m3 = new Movie {
+                    Title = "Black Panther",
+                    Actors = new System.Collections.Generic.List<MovieActor> {
+                    new MovieActor{Actor = new Actor {Name = "Chadwick Boseman"}},
+                    new MovieActor{Actor = new Actor {Name = "Chris Evans"}}
                     }
                 };
                 db.Movies.Add(m);
+                db.Movies.Add(m1);
+                db.Movies.Add(m2);
+                db.Movies.Add(m3);
                 db.SaveChanges();*/
 
                 //FEEDBACK VAN LES
@@ -35,7 +60,19 @@ namespace Les1
                         }
                     }
                 }
-                var query = from m in db.Movies
+                foreach (var actor in db.Actors) {
+                    Console.WriteLine(actor.Name);
+                    foreach (var ma in db.MovieActor) {
+                        if (ma.ActorId == actor.Id) {
+                            foreach (var movie in db.Movies) {
+                                if (movie.Id == ma.MovieId) {
+                                    Console.WriteLine(" - " + movie.Title);
+                                }
+                            }
+                        }
+                    }
+                }
+                /*var query = from m in db.Movies
                             from ma in db.MovieActor
                             from a in db.Actors
                             where m.Id == ma.MovieId && a.Id == ma.ActorId
@@ -48,27 +85,7 @@ namespace Les1
                 }
 
 
-                //Find and see the actors for each movie in DB
-                foreach (var movie in db.Movies) {
-                    Console.WriteLine("Found movie with title: " + movie.Title);
-                    var MovieID = movie.Id;
-                    //foreach (var movieActor in db.MovieActors.Where(ma => movie.Id == ma.MovieId)) {
-                    //    foreach (var actor in db.Actors.Where(movie.Id == MovieActor.MovieId)) {
-                    //        Console.WriteLine("Found actor with name: " + actor.Name);
-                    //    }
-                    //}
-                    var query = db.Actors.Where(a => a.Movies.Any(m => m.MovieId == MovieID)).ToList();
-                    var query1 = from actor in db.Actors where actor.Movies.Any(m => m.MovieId == MovieID) select actor;
-                    return result.Where(a => a.Movies.Any(m => m.Movie == MovieId));
-                    Console.WriteLine(query1);
-
-
-                    //foreach (var actor in db.Actors.Where(a => movie.Id == a.MovieId)) {
-                    //    Console.WriteLine("Found actor with name: " + actor.Name);
-                    //}
-                }
-
-                /*//Editing movie title name of the 1st movie in the DB
+                //Editing movie title name of the 1st movie in the DB
                 Movie foundMovie = db.Movies.Find(1);
                 Console.WriteLine("Found movie with title: " + foundMovie.Title);
                 foundMovie.Title = "White cats, Black cats...";
