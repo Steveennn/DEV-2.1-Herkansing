@@ -72,16 +72,16 @@ namespace Les1
                     }
                 };
                                 
-                db.Movies.Add(m1);
+                /*db.Movies.Add(m1);
                 db.Movies.Add(m2);
                 db.Movies.Add(m3);
                 db.Movies.Add(m4);
                 db.Movies.Add(m5);
                 db.Movies.Add(m6);
-                db.SaveChanges();
+                db.SaveChanges();*/
 
                 //FEEDBACK VAN LES
-                foreach (var movie in db.Movies) {
+                /*foreach (var movie in db.Movies) {
                     Console.WriteLine(movie.Title);
                     foreach (var ma in db.MovieActor) {
                         if (ma.MovieId == movie.Id) {
@@ -109,18 +109,29 @@ namespace Les1
                             }
                         }
                     }
-                }
-                /*var query = from m in db.Movies
+                }*/
+                var query = from m in db.Movies
                             from ma in db.MovieActor
+                            where ma.MovieId == m.Id
                             from a in db.Actors
-                            where m.Id == ma.MovieId && a.Id == ma.ActorId
-                            select new {Actor = a, Movie = m};
-                            //where m.Title.EndsWith("2")
-                            //select m;
+                            where ma.ActorId == a.Id
+                            group a by m into g
+                            where g.Count() >=3 //selecteerd films met minimaal 3 actors
+                            select Tuple.Create(g.Key, new {AmountActors = g.Count()});
+
+                var query2 = from m in db.Movies
+                            let average_age =
+                                (from ma in db.MovieActor
+                                where ma.MovieId == m.Id
+                                from a in db.Actors
+                                where ma.ActorId == a.Id
+                                select a).Average(a => a.Age)
+                            where average_age >= 50;
+
                 foreach (var item in query){
-                    Console.WriteLine("Movies: " + item.Movie.Title + " - Actor: " + item.Actor.Name);
+                    Console.WriteLine("Movie: " + item.Item1.Title + " - Actor: " + item.Item2.AmountActors);
                 }
-                //Editing movie title name of the 1st movie in the DB
+                /*//Editing movie title name of the 1st movie in the DB
                 Movie foundMovie = db.Movies.Find(1);
                 Console.WriteLine("Found movie with title: " + foundMovie.Title);
                 foundMovie.Title = "White cats, Black cats...";
